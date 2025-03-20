@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc sản An Giang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #FFD700;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        header {
+            background-color: #D2691E;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        nav {
+            background-color: #A0522D;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #8B4513;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-in-out forwards;
+            transition: transform 0.3s ease-in-out;
+        }
+        .content:hover {
+            transform: scale(1.02);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #D2691E;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+        }
+        .back-to-top:hover {
+            background: #8B4513;
+            transform: scale(1.1);
+        }
+        .search-box {
+            margin: 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid #A0522D;
+            border-radius: 5px;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: white;
+        }
+        .toggle-dark-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background: #A0522D;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .toggle-dark-mode:hover {
+            background: #8B4513;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #D2691E;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>Đặc sản An Giang</header>
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">🌙</button>
+    <nav>
+        <a href="#bun-ca">Bún Cá</a>
+        <a href="#mam-chau-doc">Mắm Châu Đốc</a>
+        <a href="#goi-sau-dau">Gỏi Sầu Đâu</a>
+        <a href="#banh-bo">Bánh Bò Thốt Nốt</a>
+    </nav>
+    <input type="text" class="search-box" placeholder="Tìm món ăn..." onkeyup="searchDishes()">
+    
+    <div class="content" id="bun-ca">
+        <h2>Bún Cá Long Xuyên</h2>
+        <img src="https://d-annamtravel.com/static/media/bun-ca-hieu-thuan-424434100521.jpg" alt="Bún cá Long Xuyên">
+        <p>Nguyên liệu: Cá lóc, bún, rau sống, nghệ, mắm ruốc, hành tím.</p>
+    </div>
+    <div class="content" id="mam-chau-doc">
+        <h2>Mắm Châu Đốc</h2>
+        <img src="https://www.vietfuntravel.com.vn/image/data/Blog/dac-san/lau-mam-chau-doc-dinh-cao-cua-am-thuc-chau-doc/lau-mam-chau-doc-dinh-cao-cua-am-thuc-chau-doc-h1.jpg" alt="Mắm Châu Đốc">
+        <p>Nguyên liệu: Cá linh, cá sặc, muối, đường, thính.</p>
+    </div>
+    <div class="content" id="goi-sau-dau">
+        <h2>Gỏi Sầu Đâu</h2>
+        <img src="https://dulichvietnam.com.vn/vnt_upload/news/08_2024/thumbnail.jpg" alt="Gỏi Sầu Đâu">
+        <p>Nguyên liệu: Lá sầu đâu, tôm, thịt ba chỉ, nước mắm chua ngọt.</p>
+    </div>
+    <div class="content" id="banh-bo">
+        <h2>Bánh Bò Thốt Nốt</h2>
+        <img src="https://bizweb.dktcdn.net/100/349/716/files/banh-bo-thot-not-an-giang-2.jpg?v=1726828309533" alt="Bánh Bò Thốt Nốt">
+        <p>Nguyên liệu: Bột gạo, nước thốt nốt, đường thốt nốt, men nở.</p>
+    </div>
+    
+    <button class="back-to-top" onclick="scrollToTop()">▲</button>
+    <footer>&copy; 2025 Đặc sản An Giang</footer>
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.onscroll = function() {
+            document.querySelector(".back-to-top").style.display = 
+                document.documentElement.scrollTop > 300 ? "block" : "none";
+        };
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+        function searchDishes() {
+            let input = document.querySelector(".search-box").value.toLowerCase();
+            let contents = document.querySelectorAll(".content");
+            contents.forEach(content => {
+                let text = content.textContent.toLowerCase();
+                content.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
